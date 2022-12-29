@@ -1,5 +1,5 @@
 var music = document.getElementById("audio");
-var music1=music
+var music1 = music;
 const play = document.getElementById("play");
 const image = document.getElementById("image");
 const next = document.getElementById("next");
@@ -88,7 +88,6 @@ prev.addEventListener("click", function () {
   document.getElementById("pause").style.display = "none";
   document.getElementById("play").style.display = "block";
   document.getElementsByClassName("progress")[0].style.width = "0%";
-  
 });
 document.getElementById("hide").style.display = "none";
 
@@ -122,13 +121,12 @@ fluteSong.addEventListener("click", function () {
   document.getElementById("pause").style.display = "block";
   document.getElementById("play").style.display = "none";
   document.getElementsByClassName("progress")[0].style.width = "0%";
-  fluteSong.style.color="Indigo";
-  sugarBrownies.style.color="black";
-  DontLetMeDown.style.color="black";
-  unstoppable.style.color="black";
-  FairyTale.style.color="black"
-  fluteSong.style.zIndex="-1"
-
+  fluteSong.style.color = "Indigo";
+  sugarBrownies.style.color = "black";
+  DontLetMeDown.style.color = "black";
+  unstoppable.style.color = "black";
+  FairyTale.style.color = "black";
+  fluteSong.style.zIndex = "-1";
 });
 const FairyTale = document.getElementById("FairyTale");
 FairyTale.addEventListener("click", function () {
@@ -148,14 +146,12 @@ FairyTale.addEventListener("click", function () {
   document.getElementById("pause").style.display = "block";
   document.getElementById("play").style.display = "none";
   document.getElementsByClassName("progress")[0].style.width = "0%";
-  FairyTale.style.color="Indigo";
-  fluteSong.style.color="black";
-  unstoppable.style.color="black";
-  sugarBrownies.style.color="black"
-  DontLetMeDown.style.color="black"
-  FairyTale.style.zIndex="-2"
-
-  
+  FairyTale.style.color = "Indigo";
+  fluteSong.style.color = "black";
+  unstoppable.style.color = "black";
+  sugarBrownies.style.color = "black";
+  DontLetMeDown.style.color = "black";
+  FairyTale.style.zIndex = "-2";
 });
 const unstoppable = document.getElementById("unstoppable");
 unstoppable.addEventListener("click", function () {
@@ -175,13 +171,12 @@ unstoppable.addEventListener("click", function () {
   document.getElementById("pause").style.display = "block";
   document.getElementById("play").style.display = "none";
   document.getElementsByClassName("progress")[0].style.width = "0%";
-  unstoppable.style.color="Indigo";
-  FairyTale.style.color="black"
-  fluteSong.style.color="black";
-  sugarBrownies.style.color="black"
-  DontLetMeDown.style.color="black"
-  unstoppable.style.zIndex="-2"
-  
+  unstoppable.style.color = "Indigo";
+  FairyTale.style.color = "black";
+  fluteSong.style.color = "black";
+  sugarBrownies.style.color = "black";
+  DontLetMeDown.style.color = "black";
+  unstoppable.style.zIndex = "-2";
 });
 const DontLetMeDown = document.getElementById("DontLetMeDown");
 DontLetMeDown.addEventListener("click", function () {
@@ -200,14 +195,12 @@ DontLetMeDown.addEventListener("click", function () {
   document.getElementById("pause").style.display = "block";
   document.getElementById("play").style.display = "none";
   document.getElementsByClassName("progress")[0].style.width = "0%";
-  DontLetMeDown.style.color="Indigo";
-  unstoppable.style.color="black";
-  FairyTale.style.color="black"
-  fluteSong.style.color="black";
-  sugarBrownies.style.color="black"
-  DontLetMeDown.style.zIndex="-2"
-  
-
+  DontLetMeDown.style.color = "Indigo";
+  unstoppable.style.color = "black";
+  FairyTale.style.color = "black";
+  fluteSong.style.color = "black";
+  sugarBrownies.style.color = "black";
+  DontLetMeDown.style.zIndex = "-2";
 });
 const sugarBrownies = document.getElementById("sugarBrownies");
 sugarBrownies.addEventListener("click", function () {
@@ -227,13 +220,12 @@ sugarBrownies.addEventListener("click", function () {
   document.getElementById("pause").style.display = "block";
   document.getElementById("play").style.display = "none";
   document.getElementsByClassName("progress")[0].style.width = "0%";
-  sugarBrownies.style.color="Indigo";
-  DontLetMeDown.style.color="black";
-  unstoppable.style.color="black";
-  FairyTale.style.color="black"
-  fluteSong.style.color="black";
-  sugarBrownies.style.zIndex="-2"
-  
+  sugarBrownies.style.color = "Indigo";
+  DontLetMeDown.style.color = "black";
+  unstoppable.style.color = "black";
+  FairyTale.style.color = "black";
+  fluteSong.style.color = "black";
+  sugarBrownies.style.zIndex = "-2";
 });
 
 music1.addEventListener("timeupdate", (event) => {
@@ -338,6 +330,30 @@ function uploadsongs() {
     html.setAttribute("id", i + "song");
     html.setAttribute("title", "click to play");
     document.getElementsByClassName("songs_playlist")[0].appendChild(html);
+    document.getElementById("songmp3file").value = "";
+
+    // change the color of update song
+
+    var beatelement = document.getElementById(i + "song");
+    beatelement.addEventListener("click", () => {
+      beatelement.style.color = "Indigo";
+      let songs = document.getElementsByClassName("songs");
+      for (let i = 0; i < songs.length - 1; i++) {
+        songs[i].style.color = "black";
+      }
+
+      songs = document.getElementsByClassName("songs");
+      for (let i = 0; i < songs.length; i++) {
+        songs[i].addEventListener("click", () => {
+          //elem=document.getElementById(b+'beat');
+          beatelement.style.color = "black";
+          elemColorUpdate();
+        });
+      }
+    });
+    beatelement.addEventListener("mouseenter", () => {
+      beatelement.style.color = "Indigo";
+    });
 
     let song = document.getElementById(i + "song");
     song.addEventListener("click", () => {
@@ -358,47 +374,15 @@ function uploadsongs() {
       document.getElementById("pause").style.display = "block";
       document.getElementById("play").style.display = "none";
       document.getElementsByClassName("progress")[0].style.width = "0%";
-      let i=6
-      document.getElementById('id'+i).style.color="Indigo"
+      let i = 6;
+      document.getElementById("id" + i).style.color = "Indigo";
       i++;
     });
     i++;
   } else {
   }
-
-  document.getElementById("songmp3file").value = "";
 }
 uploadsongs();
-
-//upload beat
-let j = 11;
-function uploadbeat() {
-  let file = document.getElementById("beatmp3file").value;
-  if (file != "") {
-    let file = document.getElementById("beatmp3file").value;
-    let songName = file.slice(12);
-    let h4 = document.createElement("h4");
-    h4.setAttribute("class", "allbeats");
-    h4.setAttribute("id", j + "beat");
-    h4.setAttribute("title", "click to play");
-    h4.innerHTML = j + ". " + songName;
-    document.getElementsByClassName("beats")[0].appendChild(h4);
-    let music1 = document.getElementById("newbeat");
-    music1.src = "music/" + songName;
-    let i = 2;
-    h4.addEventListener("click", () => {
-      if (i % 2 == 0) {
-        music1.play();
-      } else {
-        music1.pause();
-      }
-      i++;
-    });
-    file = document.getElementById("beatmp3file").value = "";
-    j++;
-  }
-}
-uploadbeat();
 
 //beat music container
 var beatss = [
@@ -441,7 +425,7 @@ var beatss = [
   },
 ];
 var gana = document.getElementById("beat");
-var beatsong=gana
+var beatsong = gana;
 let beatImage = document.getElementById("beatImage");
 let beatTitle = document.getElementById("beat_title");
 let beatArtist = document.getElementById("beat_artist");
@@ -554,15 +538,7 @@ DrugBeat.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="indigo";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -582,15 +558,15 @@ BestDjMix.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="Indigo";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "Indigo";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -612,16 +588,15 @@ DjBeats.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black";
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black";
-  electro_pop.style.color="black";
-  i_wanna_feel.style.color="black";
-  DjBeats.style.color="Indigo";
-  DjBeatsMix.style.color="black"; 
-  var loadbeats = (beatss) => {
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "Indigo";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -633,7 +608,7 @@ DjBeats.addEventListener("click", () => {
   };
   loadbeats(beatss[2]);
   beatsong.play(beatss[2]);
-}});
+});
 let DjBeatsMix = document.getElementById("DjBeatsMix");
 let beat4 = document.getElementById("beat4");
 let b4 = 2;
@@ -641,15 +616,15 @@ DjBeatsMix.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="Indigo"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "Indigo";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -669,15 +644,15 @@ HellBoy.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="Indigo"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "Indigo";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -697,15 +672,15 @@ SmakeThatDjRemix.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="Indigo";
-  HellBoy.style.color="black"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "Indigo";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -725,15 +700,15 @@ Hip_hop_rock.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="Indigo"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "Indigo";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -753,15 +728,15 @@ electro_pop.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black"
-  electro_pop.style.color="Indigo"
-  i_wanna_feel.style.color="black"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "Indigo";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -781,15 +756,15 @@ i_wanna_feel.addEventListener("click", () => {
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
-  DrugBeat.style.color="black";
-  BestDjMix.style.color="black";
-  Hip_hop_rock.style.color="black"
-  SmakeThatDjRemix.style.color="black";
-  HellBoy.style.color="black"
-  electro_pop.style.color="black"
-  i_wanna_feel.style.color="Indigo"
-  DjBeats.style.color="black";
-  DjBeatsMix.style.color="black"; 
+  DrugBeat.style.color = "black";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "Indigo";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   var loadbeats = (beatss) => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
@@ -802,7 +777,9 @@ i_wanna_feel.addEventListener("click", () => {
   loadbeats(beatss[7]);
   beatsong.play(beatss[7]);
 });
-let b = 10;
+
+//uploadbeat
+var b = 10;
 function uploadbeat() {
   let beatsong = document.getElementById("beat");
 
@@ -837,6 +814,26 @@ function uploadbeat() {
     html.setAttribute("id", b + "beat");
     html.setAttribute("title", "click to play");
     document.getElementsByClassName("beats")[0].appendChild(html);
+
+    var elem = document.getElementById(b + "beat");
+    elem.addEventListener("click", () => {
+      elem.style.color = "Indigo";
+      let beats = document.getElementsByClassName("allbeats");
+      for (let i = 0; i < beats.length - 1; i++) {
+        beats[i].style.color = "black";
+      }
+
+      beats = document.getElementsByClassName("allbeats");
+      for (let i = 0; i < beats.length; i++) {
+        beats[i].addEventListener("click", () => {
+          // elem=document.getElementById(b+'beat');
+          elem.style.color = "black";
+        });
+      }
+    });
+    elem.addEventListener("mouseenter", () => {
+      elem.style.color = "Indigo";
+    });
 
     let beat = document.getElementById(b + "beat");
     beat.addEventListener("click", () => {
@@ -919,15 +916,11 @@ music1 = audio;
 let volume = document.getElementById("SongVolumeSlider");
 volume.addEventListener("click", () => {
   music1.volume = volume.value / 100;
-  
 });
 volume.addEventListener("mousemove", () => {
   music1.volume = volume.value / 100;
-
 });
-music1=music
-
-
+music1 = music;
 
 //beat audio
 let beataudio = document.getElementById("beat").src.slice(22);
@@ -940,5 +933,4 @@ beatVolume.addEventListener("click", () => {
 beatVolume.addEventListener("mousemove", () => {
   beatsong.volume = beatVolume.value / 100;
 });
-beatsong=gana
-
+beatsong = gana;
