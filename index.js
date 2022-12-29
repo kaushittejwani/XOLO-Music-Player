@@ -543,7 +543,7 @@ DrugBeat.addEventListener("click", () => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
     beatArtist.textContent = beatss.artist_name;
-    beatsong.src = "beatMusic/" + beatss.Song_title + ".mp3";
+    beatsong.src = "beatMusic/" + beatss.Song_title+".mp3";
     beatImage.src = "beatImages/" + beatss.Song_title;
     download.href = "beatMusic/" + beatss.Song_title;
     download.download = "beatMusic/" + beatss.Song_title;
@@ -713,7 +713,7 @@ Hip_hop_rock.addEventListener("click", () => {
     console.log(beatss.Song_title);
     beatTitle.textContent = beatss.Song_title;
     beatArtist.textContent = beatss.artist_name;
-    beatsong.src = "beatMusic/" + beatss.Song_title + ".mp3";
+    beatsong.src = "beatMusic/" + beatss.Song_title+".mp3";
     beatImage.src = "beatImages/" + beatss.Song_title;
     download.href = "beatMusic/" + beatss.Song_title;
     download.download = "beatMusic/" + beatss.Song_title;
