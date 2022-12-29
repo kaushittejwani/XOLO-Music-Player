@@ -535,6 +535,15 @@ let DrugBeat = document.getElementById("DrugBeat");
 let beat1 = document.getElementById("beat1");
 let b1 = 2;
 DrugBeat.addEventListener("click", () => {
+  DrugBeat.style.color = "Indigo";
+  BestDjMix.style.color = "black";
+  Hip_hop_rock.style.color = "black";
+  SmakeThatDjRemix.style.color = "black";
+  HellBoy.style.color = "black";
+  electro_pop.style.color = "black";
+  i_wanna_feel.style.color = "black";
+  DjBeats.style.color = "black";
+  DjBeatsMix.style.color = "black";
   beatImage.classList.add("anime");
   document.getElementById("beatpause").style.display = "block";
   document.getElementById("beatplay").style.display = "none";
